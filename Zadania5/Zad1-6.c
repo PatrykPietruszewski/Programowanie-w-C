@@ -6,7 +6,11 @@ typedef struct node {
 } node_t;
 
 
-
+void pop(node_t ** head){
+    node_t * tmp = * head;
+    * head = (* head)->next;
+    free(tmp);
+}
 
 void add_first(node_t** head, int var){
 
@@ -47,7 +51,9 @@ int main()
     printList(head);
     
     //Zadanie 2
-    
+    printf("\nZadanie 2\n");
+    pop(&head);
+    printList(head);
     
     
     return 0;
